@@ -1,1 +1,1 @@
-Please run test cases on SuiteRegressionTest.xml
+**Please run test cases Terminal on src/test/resources/suites/SuiteRegressionTest.xml
