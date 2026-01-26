@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite Regression Test" verbose="1" parallel="tests">
+
+    <test name="Demo DataProvider">
+        <parameter name="platformName" value="Android"/>
+        <parameter name="deviceName" value="pixel8"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <parameter name="host" value="127.0.0.1"/>
+        <parameter name="port" value="4723"/>
+        <parameter name="systemPort" value="8201"/>
+        <classes>
+            <class name="com.anhtester.bai23_excel_file.testcases.LoginTest">
+                <methods>
+                    <!--<include name="loginTestDataProvider1"/>-->
+                    <!--                    <include name="testLoginFromExcel"/>-->
+                    <include name="loginTestDataProvider1"/>
+                    <include name="testLoginFromExcel"/>
+                    <include name="testLoginSuccess"/>
+                    <include name="testLoginFailWithUsernameInvalid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
