@@ -1,0 +1,22 @@
+{
+  "invalidLoginCases": [
+    {
+      "name": "Blank Email",
+      "email": "",
+      "password": "10203040",
+      "message": "Username is required"
+    },
+    {
+      "name": "Blank Password",
+      "email": "bod@example.com",
+      "password": "",
+      "message": "Enter Password"
+    },
+    {
+      "name": "Blank Email And Password",
+      "email": "",
+      "password": "",
+      "message": "Username is required"
+    }
+  ]
+}

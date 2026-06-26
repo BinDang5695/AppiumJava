@@ -1,0 +1,16 @@
+{
+  "checkoutCase": [
+    {
+      "fullName": "Bin Dang",
+      "addressLine1": "321 TQT",
+      "addressLine2": "123 TQT",
+      "city": "DN",
+      "zipCode": "50000",
+      "country": "VN",
+      "cardName": "Bin Dang",
+      "cardNumber": "123456",
+      "expirationDate": "05/06",
+      "securityCode": "123"
+    }
+  ]
+}

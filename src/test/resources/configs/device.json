@@ -14,6 +14,18 @@
           "fullReset": false,
           "autoGrantPermissions": true
         },
+        "pixel8": {
+          "platformName": "Android",
+          "platformVersion": "15",
+          "automationName": "UiAutomator2",
+          "deviceName": "Pixel_8_Pro_API_35",
+          "appPackage": "com.saucelabs.mydemoapp.rn",
+          "appActivity": ".MainActivity",
+          "appAndroidPath": "C://Users//BinDangVan//Downloads//Android-MyDemoAppRN.1.3.0.build-244.apk",
+          "noReset": false,
+          "fullReset": false,
+          "autoGrantPermissions": true
+        },
         "pixel9": {
           "platformName": "Android",
           "platformVersion": "15",
