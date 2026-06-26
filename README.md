@@ -366,7 +366,15 @@ Similarly, different devices can be configured and selected using Maven paramete
 
 ---
 
-Finally, we can use npm run command to specify the enviroment that we want to run. For example, if we want to run all tests UI and API on Chromium we can use below command:
+Instead of using npm commands, we can use Maven commands to run different TestNG suites for Appium automation.
+
+For example, if we want to run all regression tests on a single Android environment, we can use:
+
+mvn clean test "-DsuiteXmlFile=src/test/resources/suites/SuiteRegressionTest.xml"
+
+If we want to run tests across multiple platforms, we can use:
+
+mvn clean test "-DsuiteXmlFile=src/test/resources/suites/SuiteRegressionTest_Multi_Platform.xml"
 ```sh
 npm run test:all:chrome:admin
 npm run test:all:edge:admin
