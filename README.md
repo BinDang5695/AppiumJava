@@ -1,6 +1,6 @@
 # AppiumFramework
 
-Appium TypeScript Automation Framework
+Appium Java Automation Framework
 
 ## Appium Introduction
 
