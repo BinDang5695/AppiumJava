@@ -226,11 +226,6 @@ mvn clean test
 
 ---
 
-## Run each test suites
-
-```sh
-mvn clean test "-Dtest=testcases.SauceLabsApp.Payment"
-```
 <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/97c41c62-9930-492b-947e-7483f1418a45" />
 
 ---
