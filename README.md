@@ -24,107 +24,107 @@ This is a mobile automation framework using Appium written in Java.
 ## Framework Structure
 
 ```
-├── .idea/                                                                                # 
-├── exports/                                                                              # 
-│   ├── logs                                                                              #
-│   ├── screenshots                                                                       #
-│   └── videos                                                                            #
-├── report/                                                                               #
+├── .idea/                                                                                # IntelliJ IDEA project settings
+├── exports/                                                                              # Output artifacts generated during execution
+│   ├── logs                                                                              # Execution logs (Appium, framework logs)
+│   ├── screenshots                                                                       # Captured screenshots on failure/success
+│   └── videos                                                                            # Recorded test execution videos
+├── report/                                                                               # Custom or generated HTML reports
 ├── src/                                              
 │   ├── main/                                         
 │   │   ├── java/                                       
-│   │   │   ├── constants/                                                                #        
-│   │   │   │   └── ConfigData                                                            # 
-│   │   │   ├── drivers/                                                                  #        
-│   │   │   │   ├── AndroidDriverManager                                                  #
-│   │   │   │   └── DriverManager                                                         # 
-│   │   │   ├── helpers/                                                                  #        
-│   │   │   │   ├── CaptureHelpers                                                        #
-│   │   │   │   ├── ExcelHelpers                                                          #
-│   │   │   │   ├── JsonHelpers                                                           #
-│   │   │   │   ├── PropertiesHelpers                                                     #
-│   │   │   │   └── SystemHelpers                                                         #
-│   │   │   ├── keywords/                                                                 #        
-│   │   │   │   └── MobileUI                                                              #
-│   │   │   ├── reports/                                                                  #        
-│   │   │   │   └── AllureManager                                                         #
-│   │   │   ├── utils/                                                                    #        
-│   │   │   │   ├── DateUtils                                                             #
-│   │   │   │   └── LogUtils                                                              #
-│   │   └── resources/                                                                    #
-│   │   │   ├── META-INF.services/                                                        #        
-│   │   │   │   └── io.qameta.allure.listener.TestLifecycleListener                       # 
-│   │   │   ├── log4j2.properties                                                         #        
-│   │   │   └── log4j2_OFF.xml                                                            #        
+│   │   │   ├── constants/                                                                # Constant values used across framework       
+│   │   │   │   └── ConfigData                                                            # Centralized configuration data holder
+│   │   │   ├── drivers/                                                                  # Driver initialization and management layer               
+│   │   │   │   ├── AndroidDriverManager                                                  # Android driver setup and lifecycle
+│   │   │   │   └── DriverManager                                                         # Generic driver abstraction layer
+│   │   │   ├── helpers/                                                                  # Utility helper classes        
+│   │   │   │   ├── CaptureHelpers                                                        # Screenshot and video capture utilities
+│   │   │   │   ├── ExcelHelpers                                                          # Excel file reading/writing utilities
+│   │   │   │   ├── JsonHelpers                                                           # JSON parsing utilities
+│   │   │   │   ├── PropertiesHelpers                                                     # Properties file handling utilities
+│   │   │   │   └── SystemHelpers                                                         # System-level helper utilities (OS, env, etc.)
+│   │   │   ├── keywords/                                                                 # Reusable keyword actions (custom mobile actions)        
+│   │   │   │   └── MobileUI                                                              # Mobile UI interaction keywords wrapper
+│   │   │   ├── reports/                                                                  # Reporting integration layer      
+│   │   │   │   └── AllureManager                                                         # Allure report helper/adapter
+│   │   │   ├── utils/                                                                    # General utility classes        
+│   │   │   │   ├── DateUtils                                                             # Date and time utilities
+│   │   │   │   └── LogUtils                                                              # Logging utilities wrapper
+│   │   └── resources/                                                                    # Main resources used by framework
+│   │   │   ├── META-INF.services/                                                        # Service loader configuration     
+│   │   │   │   └── io.qameta.allure.listener.TestLifecycleListener                       # Allure lifecycle listener registration
+│   │   │   ├── log4j2.properties                                                         # Log4j2 configuration       
+│   │   │   └── log4j2_OFF.xml                                                            # Disabled logging configuration        
 │   ├── test/                                         
 │   │   ├── java/                                       
-│   │   │   ├── common/                                                                   #
-│   │   │   │   ├── BaseTestAndroidPlatform                                               # 
-│   │   │   │   ├── BaseTestFlutterPlatform                                               # 
-│   │   │   │   └── BaseTestSauceLabs                                                     # 
-│   │   │   ├── dataproviders/                                                            #
-│   │   │   │   ├── CheckoutDataProvider                                                  # 
-│   │   │   │   └── LoginDataProvider                                                     # 
-│   │   │   ├── listeners/                                                                #
-│   │   │   │   └── TestListener                                                          # 
-│   │   │   ├── model/                                                                    #
-│   │   │   │   ├── Login                                                                 # 
-│   │   │   │   └── Payment                                                               # 
-│   │   │   ├── pages/                                                                    #
-│   │   │   │   ├── SauceLabsApp                                                          #
-│   │   │   │   │   ├── BasePage                                                          #
-│   │   │   │   │   ├── CheckoutPage                                                      #
-│   │   │   │   │   ├── DrawingPage                                                       #
-│   │   │   │   │   ├── LoginPage                                                         #
-│   │   │   │   │   ├── MyCartPage                                                        #
-│   │   │   │   │   ├── ProductsDetailsPage                                               #
-│   │   │   │   │   ├── ProductsPage                                                      #
-│   │   │   │   │   ├── WebViewPage                                                       #
-│   │   │   │   └── TaurusApp                                                             # 
-│   │   │   │   │   ├── BasePage                                                          #
-│   │   │   │   │   ├── ConfigPage                                                        #
-│   │   │   │   │   ├── DatePage                                                          #
-│   │   │   │   │   ├── LoginPage                                                         #
-│   │   │   │   │   ├── MenuPage                                                          #
-│   │   │   │   │   ├── OrderPage                                                         #
-│   │   │   │   │   ├── ProductPage                                                       #
-│   │   │   │   │   ├── ProfilePage                                                       #
-│   │   │   │   │   ├── ServerPage                                                        #
-│   │   │   │   │   └── TablePage                                                         #
-│   │   │   ├── testcases/                                                                #
-│   │   │   │   ├── SauceLabsApp                                                          #
-│   │   │   │   │   ├── Actions                                                           #
-│   │   │   │   │   ├── Login                                                             #
-│   │   │   │   │   ├── Notification                                                      #
-│   │   │   │   │   └── Payment                                                           #
-│   │   │   │   └── TaurusApp                                                             #
-│   │   │   │   │   ├── BaseTest                                                          #
-│   │   │   │   │   ├── DateTest                                                          #
-│   │   │   │   │   ├── LoginTest                                                         #
-│   │   │   │   │   ├── MenuTest                                                          #
-│   │   │   │   │   ├── OrderTest                                                         #
-│   │   │   │   │   ├── ProductTest                                                       #
-│   │   │   │   │   └── ProfileTest                                                       #
+│   │   │   ├── common/                                                                   # Base test setup and shared test configuration
+│   │   │   │   ├── BaseTestAndroidPlatform                                               # Base setup for Android test execution
+│   │   │   │   ├── BaseTestFlutterPlatform                                               # Base setup for Flutter application testing
+│   │   │   │   └── BaseTestSauceLabs                                                     # Base setup for Sauce Labs App testing
+│   │   │   ├── dataproviders/                                                            # TestNG DataProviders for data-driven testing
+│   │   │   │   ├── CheckoutDataProvider                                                  # Data provider for checkout scenarios
+│   │   │   │   └── LoginDataProvider                                                     # Data provider for login scenarios
+│   │   │   ├── listeners/                                                                # TestNG listeners for hooks and reporting
+│   │   │   │   └── TestListener                                                          # Custom listener for test events
+│   │   │   ├── model/                                                                    # POJO models for test data mapping
+│   │   │   │   ├── Login                                                                 # Login data model
+│   │   │   │   └── Payment                                                               # Payment data model
+│   │   │   ├── pages/                                                                    # Page Object Model (POM) layer
+│   │   │   │   ├── SauceLabsApp                                                          # POM for Sauce Labs application
+│   │   │   │   │   ├── BasePage                                                          # Common base page actions
+│   │   │   │   │   ├── CheckoutPage                                                      # Checkout screen actions
+│   │   │   │   │   ├── DrawingPage                                                       # Drawing feature screen actions
+│   │   │   │   │   ├── LoginPage                                                         # Login screen actions
+│   │   │   │   │   ├── MyCartPage                                                        # Cart screen actions       
+│   │   │   │   │   ├── ProductsDetailsPage                                               # Product detail screen actions
+│   │   │   │   │   ├── ProductsPage                                                      # Products screen actions
+│   │   │   │   │   ├── WebViewPage                                                       # WebView screen actions
+│   │   │   │   └── TaurusApp                                                             # POM for Taurus application 
+│   │   │   │   │   ├── BasePage                                                          # Common base page actions
+│   │   │   │   │   ├── ConfigPage                                                        # Configuration screen actions
+│   │   │   │   │   ├── DatePage                                                          # Date selection screen actions
+│   │   │   │   │   ├── LoginPage                                                         # Login screen actions
+│   │   │   │   │   ├── MenuPage                                                          # Menu navigation actions
+│   │   │   │   │   ├── OrderPage                                                         # Order management actions
+│   │   │   │   │   ├── ProductPage                                                       # Product management actions
+│   │   │   │   │   ├── ProfilePage                                                       # Profile screen actions
+│   │   │   │   │   ├── ServerPage                                                        # Server configuration actions
+│   │   │   │   │   └── TablePage                                                         # Table UI actions
+│   │   │   ├── testcases/                                                                # Test case implementations
+│   │   │   │   ├── SauceLabsApp                                                          # Test suite for Sauce Labs app
+│   │   │   │   │   ├── Actions                                                           # General action-based test scenarios
+│   │   │   │   │   ├── Login                                                             # Login test scenarios
+│   │   │   │   │   ├── Notification                                                      # Notification test scenarios
+│   │   │   │   │   └── Payment                                                           # Payment test scenarios
+│   │   │   │   └── TaurusApp                                                             # Test suite for Taurus app
+│   │   │   │   │   ├── BaseTest                                                          # Base test class
+│   │   │   │   │   ├── DateTest                                                          # Date feature tests
+│   │   │   │   │   ├── LoginTest                                                         # Login feature tests
+│   │   │   │   │   ├── MenuTest                                                          # Menu feature tests
+│   │   │   │   │   ├── OrderTest                                                         # Order feature tests
+│   │   │   │   │   ├── ProductTest                                                       # Product feature tests
+│   │   │   │   │   └── ProfileTest                                                       # Profile feature tests
 │   │   └── resources/                                                                    
 │   │   │   ├── configs/                                                                  
-│   │   │   │   ├── config.properties                                                     #
-│   │   │   │   └── device.json                                                           #
-│   │   │   ├── suites/                                                                   #
-│   │   │   │   ├── SuiteRegressionTest.xml                                               #
-│   │   │   │   └── SuiteRegressionTest_Multi_Platform.xml                                #
-│   │   │   └── test_data/                                                                #
-│   │   │   │   ├── checkoutData.json                                                     #
-│   │   │   │   ├── data.json                                                             #
-│   │   │   │   ├── data.properties                                                       #
-│   │   │   │   ├── data.xlsx                                                             #
-│   │   │   │   ├── loginData.xml                                                         #
-│   │   │   │   └── sample_products.json                                                  #
-└── target/                                                                               
-│   ├── allure-report/                                                                    #
-│   ├── allure-results/                                                                   #
-├─ .gitignore                                                                             #
-├─ pom.xml                                                                                #
-└─ README.md                                                                              # Starting guideline
+│   │   │   │   ├── config.properties                                                     # Environment configuration properties
+│   │   │   │   └── device.json                                                           # Device capabilities configuration
+│   │   │   ├── suites/                                                                   # TestNG suite XML files
+│   │   │   │   ├── SuiteRegressionTest.xml                                               # Regression suite (single platform)
+│   │   │   │   └── SuiteRegressionTest_Multi_Platform.xml                                # Multi-platform execution suite
+│   │   │   └── test_data/                                                                # Test data files for data-driven testing
+│   │   │   │   ├── checkoutData.json                                                     # Checkout test data
+│   │   │   │   ├── data.json                                                             # Generic test data (JSON)
+│   │   │   │   ├── data.properties                                                       # Properties-based test data
+│   │   │   │   ├── data.xlsx                                                             # Excel-based test data
+│   │   │   │   ├── loginData.xml                                                         # XML-based login test data
+│   │   │   │   └── sample_products.json                                                  # Product sample data
+└── target/                                                                               # Maven build output directory
+│   ├── allure-report/                                                                    # Generated Allure HTML report
+│   ├── allure-results/                                                                   # Raw Allure results
+├─ .gitignore                                                                             # Git ignore rules
+├─ pom.xml                                                                                # Maven project configuration
+└─ README.md                                                                              # Project documentation & setup guide
 ```
 
 ## Requirements
