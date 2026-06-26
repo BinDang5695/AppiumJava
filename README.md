@@ -135,8 +135,8 @@ This is a mobile automation framework using Appium written in Java.
 - Maven 3.8+
 - Android Studio (Android SDK)
 - Appium Server 2.x
-- Android Emulator / Real Device
-- Appium Inspector (Optional)
+- Android Emulator
+- Appium Inspector
 ```
 
 # Getting Started
@@ -208,7 +208,7 @@ If no device is displayed, start an Android Emulator or connect a real Android d
 ## Run tests by IntelliJ IDEA
 
 1. Open the desired TestNG test class or test suite.
-2. Right-click the class or `testng.xml`.
+2. Right-click the class or `SuiteRegressionTest.xml`.
 3. Select **Run**.
 4. IntelliJ IDEA will execute the test and display the execution results in the Run window.
 
@@ -219,68 +219,18 @@ You can also run a single test method by clicking the green Run icon next to the
 ## Run all test suites
 
 ```sh
-mvn test
+mvn clean test
 ```
 
 ---
 
-## Run Smoke Test Suite
+## Run each test suites
 
 ```sh
-mvn test -DsuiteXmlFile=testng-smoke.xml
-```
-
----
-
-## Run Regression Test Suite
-
-```sh
-mvn test -DsuiteXmlFile=testng-regression.xml
-```
-
----
-
-## Run Login Test Suite
-
-```sh
-mvn test -DsuiteXmlFile=testng-login.xml
+mvn clean test "-Dtest=testcases.SauceLabsApp.Login"
 ```
 
 Please refer to the `testng.xml` files for more details.
-
----
-
-## Run tests by TestNG Groups
-
-Example:
-
-```sh
-mvn test -Dgroups=login
-```
-
-```sh
-mvn test -Dgroups=smoke
-```
-
-```sh
-mvn test -Dgroups=regression
-```
-
----
-
-## Run tests on Android Emulator / Real Device
-
-Android Emulator
-
-```sh
-mvn test -Ddevice=emulator
-```
-
-Android Real Device
-
-```sh
-mvn test -Ddevice=real
-```
 
 ---
 
@@ -295,9 +245,9 @@ Modify the `parallel` and `thread-count` attributes in the `testng.xml` file.
 Example:
 
 ```xml
-<suite name="Mobile Suite"
+<suite name="SauceLabs My Demo App mutiple platform"
        parallel="tests"
-       thread-count="3">
+       thread-count="2">
 ```
 
 This option affects all test suites.
@@ -326,7 +276,7 @@ After test execution completes, TestNG reports are automatically generated.
 The HTML report is generated in:
 
 ```text
-test-output/index.html
+target/allure-reports/
 ```
 
 If the project integrates Allure Report:
@@ -334,13 +284,13 @@ If the project integrates Allure Report:
 Generate report
 
 ```sh
-allure generate allure-results --clean -o allure-report
+allure generate target/allure-results -o target/allure-report --clean
 ```
 
 Open report
 
 ```sh
-allure open allure-report
+allure open target/allure-report
 ```
 
 ---
@@ -372,8 +322,8 @@ Example configuration:
 ```properties
 environment=DEV
 platformName=Android
-deviceName=Pixel_7
-platformVersion=14
+deviceName=Pixel_8
+platformVersion=15
 ```
 
 You can also configure:
@@ -416,43 +366,7 @@ Similarly, different devices can be configured and selected using Maven paramete
 
 ---
 
-# Useful Commands
-
-Install dependencies
-
+Finally, we can use npm run command to specify the enviroment that we want to run. For example, if we want to run all tests UI and API on Chromium we can use below command:
 ```sh
-mvn clean install
-```
-
-Start Appium Server
-
-```sh
-appium
-```
-
-Verify Android devices
-
-```sh
-adb devices
-```
-
-Run all tests
-
-```sh
-mvn test
-```
-
-Generate Allure Report
-
-```sh
-allure generate allure-results --clean -o allure-report
-```
-
-Open Allure Report
-
-```sh
-allure open allure-report
-```
-
-
-
+npm run test:all:chrome:admin
+npm run test:all:edge:admin
