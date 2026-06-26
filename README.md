@@ -289,7 +289,7 @@ Open report
 ```sh
 allure open target/allure-report
 ```
-<img width="1920" height="991" alt="image" src="https://github.com/user-attachments/assets/4c592793-b009-466f-9b6a-e550faff4cfd" />
+<img width="1920" height="992" alt="image" src="https://github.com/user-attachments/assets/871ef231-26fe-44c0-a3f7-dda486c69f8a" />
 
 ---
 
