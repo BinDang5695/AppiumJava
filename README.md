@@ -183,6 +183,7 @@ By default, Appium Server starts at:
 ```text
 http://127.0.0.1:4723
 ```
+<img width="1031" height="610" alt="image" src="https://github.com/user-attachments/assets/1713e739-8a54-46f2-a500-324f6c8d446d" />
 
 ### 3. Verify Android Device
 
@@ -198,6 +199,7 @@ Example output:
 List of devices attached
 emulator-5554    device
 ```
+<img width="481" height="277" alt="image" src="https://github.com/user-attachments/assets/be4b51d6-f934-41e3-8221-0f85a2835e77" />
 
 If no device is displayed, start an Android Emulator or connect a real Android device with USB Debugging enabled.
 
@@ -227,8 +229,9 @@ mvn clean test
 ## Run each test suites
 
 ```sh
-mvn clean test "-Dtest=testcases.SauceLabsApp.Login"
+mvn clean test "-Dtest=testcases.SauceLabsApp.Payment"
 ```
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/97c41c62-9930-492b-947e-7483f1418a45" />
 
 Please refer to the `testng.xml` files for more details.
 
@@ -292,6 +295,7 @@ Open report
 ```sh
 allure open target/allure-report
 ```
+<img width="1920" height="991" alt="image" src="https://github.com/user-attachments/assets/4c592793-b009-466f-9b6a-e550faff4cfd" />
 
 ---
 
