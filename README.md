@@ -134,7 +134,7 @@ This is a mobile automation framework using Appium written in Java.
 - Java JDK 17 or above
 - Maven 3.8+
 - Android Studio (Android SDK)
-- Appium Server 2.x
+- Appium Server 3.x
 - Android Emulator
 - Appium Inspector
 ```
