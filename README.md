@@ -199,7 +199,7 @@ Example output:
 List of devices attached
 emulator-5554    device
 ```
-<img width="481" height="277" alt="image" src="https://github.com/user-attachments/assets/be4b51d6-f934-41e3-8221-0f85a2835e77" />
+<img width="451" height="265" alt="image" src="https://github.com/user-attachments/assets/d7f0f6a6-ad27-4952-88f1-0bbc3151d911" />
 
 If no device is displayed, start an Android Emulator or connect a real Android device with USB Debugging enabled.
 
