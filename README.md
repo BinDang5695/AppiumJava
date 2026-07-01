@@ -1,6 +1,6 @@
 # AppiumFramework
 
-Appium Java Automation Framework
+Appium Java Automation Framework: This is a mobile automation framework using Appium written in Java.
 
 ## Appium Introduction
 
@@ -16,10 +16,6 @@ Appium Java Automation Framework
 [Documentation](https://appium.io/docs/en/latest/)
 [API reference](https://appium.io/docs/en/latest/reference/)
 [Changelog](https://github.com/appium/appium/releases)
-
-# Appium - Framework
-
-This is a mobile automation framework using Appium written in Java.
 
 ## Framework Structure
 
