@@ -205,6 +205,58 @@ If no device is displayed, start an Android Emulator or connect a real Android d
 
 ---
 
+# Configure Appium
+
+The framework is configured through the `config.properties` file.
+
+Example configuration:
+
+```properties
+USERNAME=bod@example.com
+PASSWORD=10203040
+
+APPIUM_DRIVER_LOCAL_SERVICE=true
+
+TIMEOUT_SERVICE=60
+TIMEOUT_EXPLICIT_DEFAULT=30
+STEP_ACTION_TIMEOUT=1
+
+JSON_CONFIG_FILE_PATH=src/test/resources/configs/device.json
+JSON_DATA_FILE_PATH=src/test/resources/test_data/data.json
+EXCEL_DATA_FILE_PATH=src/test/resources/test_data/data.xlsx
+TEST_DATA_FOLDER_PATH=src/test/resources/test_data
+
+LOCATE=en
+
+SCREENSHOT_FAIL=false
+SCREENSHOT_PASS=false
+SCREENSHOT_ALL_STEP=false
+SCREENSHOT_PATH=exports/screenshots/
+
+RECORD_VIDEO=false
+RECORD_VIDEO_PATH=exports/videos/
+
+ALLURE_REPORT_PATH=exports/reports/AllureReport
+
+```
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/9429ffc2-107c-422d-9c20-d51e06497b8a" />
+
+### Available configuration
+
+The framework allows you to configure:
+
+- Test account credentials
+- Start Appium Server locally
+- Appium service timeout
+- Explicit wait timeout
+- Step action timeout
+- Device configuration file
+- JSON and Excel test data locations
+- Application language
+- Screenshot settings
+- Video recording settings
+- Allure report output directory
+
 # Run Tests
 
 ## Run tests by IntelliJ IDEA
@@ -310,58 +362,6 @@ mvn spotless:check
 depending on your project configuration.
 
 ---
-
-# Configure Appium and Test Execution
-
-The framework is configured through the `config.properties` file.
-
-Example configuration:
-
-```properties
-USERNAME=bod@example.com
-PASSWORD=10203040
-
-APPIUM_DRIVER_LOCAL_SERVICE=true
-
-TIMEOUT_SERVICE=60
-TIMEOUT_EXPLICIT_DEFAULT=30
-STEP_ACTION_TIMEOUT=1
-
-JSON_CONFIG_FILE_PATH=src/test/resources/configs/device.json
-JSON_DATA_FILE_PATH=src/test/resources/test_data/data.json
-EXCEL_DATA_FILE_PATH=src/test/resources/test_data/data.xlsx
-TEST_DATA_FOLDER_PATH=src/test/resources/test_data
-
-LOCATE=en
-
-SCREENSHOT_FAIL=false
-SCREENSHOT_PASS=false
-SCREENSHOT_ALL_STEP=false
-SCREENSHOT_PATH=exports/screenshots/
-
-RECORD_VIDEO=false
-RECORD_VIDEO_PATH=exports/videos/
-
-ALLURE_REPORT_PATH=exports/reports/AllureReport
-
-```
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/9429ffc2-107c-422d-9c20-d51e06497b8a" />
-
-### Available configuration
-
-The framework allows you to configure:
-
-- Test account credentials
-- Start Appium Server locally
-- Appium service timeout
-- Explicit wait timeout
-- Step action timeout
-- Device configuration file
-- JSON and Excel test data locations
-- Application language
-- Screenshot settings
-- Video recording settings
-- Allure report output directory
 
 Similarly, different devices can be configured and selected using Maven parameters or configuration files.
 
