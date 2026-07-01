@@ -311,54 +311,57 @@ depending on your project configuration.
 
 ---
 
-# How to configure and run tests on different environments or devices
+# Configure Appium and Test Execution
 
-Appium allows different devices and environments to be configured through configuration files.
+The framework is configured through the `config.properties` file.
 
 Example configuration:
 
 ```properties
-environment=DEV
-platformName=Android
-deviceName=Pixel_8
-platformVersion=15
+USERNAME=bod@example.com
+PASSWORD=10203040
+
+APPIUM_DRIVER_LOCAL_SERVICE=true
+
+TIMEOUT_SERVICE=60
+TIMEOUT_EXPLICIT_DEFAULT=30
+STEP_ACTION_TIMEOUT=1
+
+JSON_CONFIG_FILE_PATH=src/test/resources/configs/device.json
+JSON_DATA_FILE_PATH=src/test/resources/test_data/data.json
+EXCEL_DATA_FILE_PATH=src/test/resources/test_data/data.xlsx
+TEST_DATA_FOLDER_PATH=src/test/resources/test_data
+
+LOCATE=en
+
+SCREENSHOT_FAIL=false
+SCREENSHOT_PASS=false
+SCREENSHOT_ALL_STEP=false
+SCREENSHOT_PATH=exports/screenshots/
+
+RECORD_VIDEO=false
+RECORD_VIDEO_PATH=exports/videos/
+
+ALLURE_REPORT_PATH=exports/reports/AllureReport
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/9429ffc2-107c-422d-9c20-d51e06497b8a" />
+
 ```
 
-You can also configure:
+### Available configuration
 
-* Base URL
-* Device Name
-* Platform Version
-* App Package
-* App Activity
-* Automation Name
-* UDID (for real devices)
+The framework allows you to configure:
 
-Then execute tests for different environments:
-
-Development
-
-```sh
-mvn test -Denvironment=DEV
-```
-
-Testing
-
-```sh
-mvn test -Denvironment=TEST
-```
-
-UAT
-
-```sh
-mvn test -Denvironment=UAT
-```
-
-Production
-
-```sh
-mvn test -Denvironment=PROD
-```
+- Test account credentials
+- Start Appium Server locally
+- Appium service timeout
+- Explicit wait timeout
+- Step action timeout
+- Device configuration file
+- JSON and Excel test data locations
+- Application language
+- Screenshot settings
+- Video recording settings
+- Allure report output directory
 
 Similarly, different devices can be configured and selected using Maven parameters or configuration files.
 
