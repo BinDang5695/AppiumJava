@@ -343,9 +343,9 @@ RECORD_VIDEO=false
 RECORD_VIDEO_PATH=exports/videos/
 
 ALLURE_REPORT_PATH=exports/reports/AllureReport
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/9429ffc2-107c-422d-9c20-d51e06497b8a" />
 
 ```
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/9429ffc2-107c-422d-9c20-d51e06497b8a" />
 
 ### Available configuration
 
